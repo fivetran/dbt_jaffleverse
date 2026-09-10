@@ -1,7 +1,7 @@
 # dbt_jaffleverse
 
-This is a simulated source specific dbt package, put together the way a real package is. The goal 
-of this project is to encourage and welcome contributions. The package ecosystem is made for and by the community.
+This is a simulated source specific dbt package, put together the way a real package is. The goal
+of this project is to encourage and welcome package contributions. The package ecosystem is made for and by the community.
 It's only as good as the community who contributes to it, and this project is meant to simulate how to contribute
 back to the ecosystem and have fun doing it!
 
@@ -15,8 +15,9 @@ The [Package Hub](https://hub.getdbt.com/) is where you look before you build. S
 usually met your source schema already, worked out the nuance, tested around it, built complex reporting, and
 published the result. You install that instead of rediscovering it, and run it in production. An often missed element
 is contributing back when you notice an issue or discover/build something yourself. This exercise is meant to showcase and
-highlight the importance of that final (often missing) piece of the ecosystem. In all, the ecosystem only exists 
-because the people who hit it wrote it down somewhere others could find.
+highlight the importance of that final (often missing) piece of the ecosystem. The ecosystem only
+exists because the people who overcame those problems shared what they learned so the rest
+of us could find it.
 
 A few example packages:
 
@@ -53,10 +54,11 @@ For details on how to effectively contribute, refer to [CONTRIBUTING.md](CONTRIB
 Pick one up whenever suits you. A maintainer reads the PR, runs the build and merges it. Open
 issues are labelled by route if you would rather take one than invent something.
 
-`AGENTS.md` at the root holds the conventions, the seed data rules, and a table pointing at the
-procedure for each route. Most AI coding tools read it on their own. If yours does not, point it
-there. Some will also pick up the four routes in `.claude/skills/` as slash commands, though you
-do not need them: this is enough.
+You do not need to know dbt to contribute here. `AGENTS.md` at the root holds the conventions, the
+seed data rules, and a table pointing at the procedure for each route. Most AI coding tools read it
+on their own. If yours does not, point it there. Some will also pick up the four routes in
+`.claude/skills/` as slash commands, though you do not need them. Asking in plain English is
+enough:
 
 > *"Add a product to the Jaffleverse seed data, something passive aggressive for the Aggressive
 > Comfort division."*
@@ -82,7 +84,7 @@ jaffle_promotion ─┘         │  │
                             └─────< jaffle_review
 ```
 
-**Staging models and a Mart layer**
+**Model layers**
 
 | Layer | Shipped | Deliberately missing |
 |---|---|---|
