@@ -1,0 +1,41 @@
+config-version: 2
+
+name: 'jaffleverse_integration_tests'
+version: '0.1.0'
+profile: 'integration_tests'
+
+vars:
+  jaffleverse_schema: jaffleverse_dev
+
+seeds:
+  jaffleverse_integration_tests:
+    +quote_columns: false
+    jaffle_division:
+      +column_types:
+        founded_at: date
+    jaffle_product:
+      +column_types:
+        launched_at: date
+        discontinued_at: date
+    jaffle_employee:
+      +column_types:
+        hired_at: date
+        terminated_at: date
+        manager_employee_id: integer
+    jaffle_customer:
+      +column_types:
+        signup_date: date
+    jaffle_promotion:
+      +column_types:
+        starts_at: date
+        ends_at: date
+    jaffle_order:
+      +column_types:
+        promotion_id: integer
+        ordered_at: timestamp
+    jaffle_payment:
+      +column_types:
+        paid_at: timestamp
+    jaffle_review:
+      +column_types:
+        submitted_at: timestamp

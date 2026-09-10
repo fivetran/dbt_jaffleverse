@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: jaffleverse
+    schema: "{{ var('jaffleverse_schema', 'jaffleverse') }}"
+    database: "{% if target.type != 'spark' %}{{ var('jaffleverse_database', target.database) }}{% endif %}"
+
+    tables:
+      - name: jaffle_division
+        description: The business units of the holding company. One row per division.
+      - name: jaffle_product_category
+        description: Product categories, each belonging to a division. One row per category.
+      - name: jaffle_product
+        description: The product catalogue. One row per product.
+      - name: jaffle_supplier
+        description: Suppliers the catalogue is sourced from. One row per supplier.
+      - name: jaffle_customer
+        description: People and businesses that buy from us. One row per customer.
+      - name: jaffle_employee
+        description: Staff across all divisions. One row per employee.
+      - name: jaffle_promotion
+        description: Discount codes and their validity windows. One row per promotion.
+      - name: jaffle_order
+        description: Order headers. One row per order.
+      - name: jaffle_order_item
+        description: Order line items. One row per product per order.
+      - name: jaffle_payment
+        description: Payments against orders. One row per payment.
+      - name: jaffle_review
+        description: Customer product reviews. One row per review.

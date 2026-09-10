@@ -1,0 +1,177 @@
+version: 2
+
+models:
+  - name: jaffleverse__orders
+    description: >
+      Each order enriched with the customer who placed it, the employee who took it, the
+      promotion applied, line item rollups and payment totals. One row per order.
+    columns:
+      - name: order_id
+        description: Primary key. Unique identifier of the order.
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Foreign key to jaffleverse__customers.
+        tests:
+          - relationships:
+              arguments:
+                to: ref('jaffleverse__customers')
+                field: customer_id
+      - name: employee_id
+        description: Identifier of the employee who took the order.
+      - name: promotion_id
+        description: Identifier of the promotion applied, null if none.
+      - name: ordered_at
+        description: Timestamp the order was placed.
+      - name: ordered_date
+        description: Date the order was placed.
+      - name: order_status
+        description: One of completed, shipped, pending, cancelled or returned.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['completed', 'shipped', 'pending', 'cancelled', 'returned']
+      - name: order_channel
+        description: How the order reached us.
+      - name: shipping_country_code
+        description: ISO-2 country code the order shipped to.
+      - name: is_fulfilled_order
+        description: Whether the order reached the customer.
+      - name: customer_name
+        description: Full name of the customer.
+      - name: customer_segment
+        description: Commercial segment of the customer.
+      - name: employee_name
+        description: Full name of the employee who took the order.
+      - name: employee_job_title
+        description: Role of the employee who took the order.
+      - name: promotion_code
+        description: >
+          Code of the promotion applied. Only present when jaffleverse_using_promotions is true.
+      - name: promotion_discount_type
+        description: >
+          Whether the promotion was percentage or fixed. Only present when
+          jaffleverse_using_promotions is true.
+      - name: order_item_count
+        description: Number of distinct line items on the order.
+      - name: total_quantity
+        description: Total units across all line items.
+      - name: net_item_amount
+        description: Value of all line items after line-level discounts.
+      - name: total_discount_amount
+        description: Currency amount discounted across all line items.
+      - name: total_item_cost
+        description: Cost of goods across all line items.
+      - name: total_item_margin
+        description: Net item amount less total item cost.
+      - name: payment_count
+        description: Number of payments recorded against the order.
+      - name: total_paid_amount
+        description: Sum of all payments against the order.
+      - name: is_refunded_order
+        description: Whether any payment against the order was refunded.
+      - name: has_payment
+        description: Whether the order has any payment at all.
+
+  - name: jaffleverse__customers
+    description: >
+      Each customer with their lifetime order history, spend, margin and recency.
+      One row per customer.
+    columns:
+      - name: customer_id
+        description: Primary key. Unique identifier of the customer.
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: Customer's first name.
+      - name: last_name
+        description: Customer's last name.
+      - name: full_name
+        description: First and last name concatenated.
+      - name: country_code
+        description: ISO-2 country code of the customer.
+      - name: signup_date
+        description: Date the customer first registered.
+      - name: customer_segment
+        description: Commercial segment the customer belongs to.
+      - name: customer_segment_rank
+        description: >
+          Sortable weight of the segment, from 1 for consumer to 4 for enterprise.
+          Produced by the jaffleverse_segment_rank macro.
+      - name: is_marketing_opted_in
+        description: Whether the customer accepts marketing contact.
+      - name: order_count
+        description: Total orders the customer has placed.
+      - name: fulfilled_order_count
+        description: Orders that reached the customer.
+      - name: first_order_date
+        description: Date of the customer's first order.
+      - name: most_recent_order_date
+        description: Date of the customer's most recent order.
+      - name: days_since_last_order
+        description: Days between the most recent order and today.
+      - name: lifetime_net_amount
+        description: Lifetime value of line items after discount.
+      - name: lifetime_margin
+        description: Lifetime net amount less cost of goods.
+      - name: lifetime_paid_amount
+        description: Lifetime sum of payments received.
+      - name: average_order_value
+        description: Lifetime net amount divided by order count.
+
+  - name: jaffleverse__products
+    description: >
+      Each product with its category, division, supplier, sales performance and review
+      summary. One row per product.
+    columns:
+      - name: product_id
+        description: Primary key. Unique identifier of the product.
+        tests:
+          - unique
+          - not_null
+      - name: product_name
+        description: Display name of the product.
+      - name: product_description
+        description: Marketing copy for the product.
+      - name: category_id
+        description: Identifier of the product's category.
+      - name: category_name
+        description: Name of the product's category.
+      - name: division_id
+        description: Identifier of the division that owns the category.
+      - name: division_name
+        description: Name of the division that owns the category.
+      - name: supplier_id
+        description: Identifier of the product's supplier.
+      - name: supplier_name
+        description: Name of the product's supplier.
+      - name: lead_time_days
+        description: Typical supplier lead time in days.
+      - name: list_price
+        description: Price the product is sold at.
+      - name: unit_cost
+        description: Cost to acquire one unit.
+      - name: unit_margin
+        description: List price less unit cost.
+      - name: is_active_product
+        description: Whether the product is currently sold.
+      - name: launched_date
+        description: Date the product went on sale.
+      - name: discontinued_date
+        description: Date the product was withdrawn, null if still sold.
+      - name: order_count
+        description: Distinct orders the product has appeared on.
+      - name: units_sold
+        description: Total units sold across all orders.
+      - name: total_net_revenue
+        description: Revenue from the product after line-level discounts.
+      - name: total_margin
+        description: Net revenue less cost of goods.
+      - name: review_count
+        description: >
+          Number of reviews for the product. Only present when jaffleverse_using_reviews is true.
+      - name: average_rating
+        description: >
+          Mean star rating for the product. Only present when jaffleverse_using_reviews is true.

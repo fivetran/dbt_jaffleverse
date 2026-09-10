@@ -1,0 +1,224 @@
+version: 2
+
+# Only stg_jaffleverse__customers carries tests today. Adding tests to the other ten
+# staging models is one of the open contribution routes. See CONTRIBUTING.md.
+
+models:
+  - name: stg_jaffleverse__divisions
+    description: The business units of Jaffleverse Holdings, one row per division.
+    columns:
+      - name: division_id
+        description: Primary key. Unique identifier of the division.
+      - name: division_name
+        description: Display name of the division.
+      - name: headquarters_city
+        description: City the division is run from.
+      - name: country_code
+        description: ISO-2 country code of the headquarters.
+      - name: founded_date
+        description: Date the division was founded.
+      - name: is_active_division
+        description: Whether the division is still trading.
+
+  - name: stg_jaffleverse__product_categories
+    description: Product categories, each belonging to a division. One row per category.
+    columns:
+      - name: category_id
+        description: Primary key. Unique identifier of the category.
+      - name: division_id
+        description: Foreign key to stg_jaffleverse__divisions.
+      - name: category_name
+        description: Display name of the category.
+      - name: is_active_category
+        description: Whether the category is still merchandised.
+
+  - name: stg_jaffleverse__products
+    description: The product catalogue. One row per product.
+    columns:
+      - name: product_id
+        description: Primary key. Unique identifier of the product.
+      - name: category_id
+        description: Foreign key to stg_jaffleverse__product_categories.
+      - name: supplier_id
+        description: Foreign key to stg_jaffleverse__suppliers.
+      - name: product_name
+        description: Display name of the product.
+      - name: product_description
+        description: Marketing copy for the product.
+      - name: list_price
+        description: Price the product is sold at.
+      - name: unit_cost
+        description: Cost to acquire one unit from the supplier.
+      - name: is_active_product
+        description: Whether the product is currently sold.
+      - name: launched_date
+        description: Date the product went on sale.
+      - name: discontinued_date
+        description: Date the product was withdrawn, null if still sold.
+
+  - name: stg_jaffleverse__suppliers
+    description: Suppliers the catalogue is sourced from. One row per supplier.
+    columns:
+      - name: supplier_id
+        description: Primary key. Unique identifier of the supplier.
+      - name: supplier_name
+        description: Display name of the supplier.
+      - name: country_code
+        description: ISO-2 country code the supplier ships from.
+      - name: lead_time_days
+        description: Typical days between placing an order and receiving it.
+      - name: reliability_score
+        description: Historic on-time delivery rate, between 0 and 1.
+      - name: is_preferred_supplier
+        description: Whether procurement treats this supplier as preferred.
+
+  - name: stg_jaffleverse__customers
+    description: People and businesses that buy from Jaffleverse. One row per customer.
+    columns:
+      - name: customer_id
+        description: Primary key. Unique identifier of the customer.
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: Customer's first name.
+      - name: last_name
+        description: Customer's last name.
+      - name: full_name
+        description: First and last name concatenated.
+      - name: country_code
+        description: ISO-2 country code of the customer.
+      - name: signup_date
+        description: Date the customer first registered.
+      - name: customer_segment
+        description: Commercial segment the customer belongs to.
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['consumer', 'small_business', 'enterprise', 'reseller']
+      - name: is_marketing_opted_in
+        description: Whether the customer accepts marketing contact.
+
+  - name: stg_jaffleverse__employees
+    description: Staff across all divisions. One row per employee.
+    columns:
+      - name: employee_id
+        description: Primary key. Unique identifier of the employee.
+      - name: division_id
+        description: Foreign key to stg_jaffleverse__divisions.
+      - name: manager_employee_id
+        description: Self-referencing foreign key to stg_jaffleverse__employees.
+      - name: first_name
+        description: Employee's first name.
+      - name: last_name
+        description: Employee's last name.
+      - name: full_name
+        description: First and last name concatenated.
+      - name: job_title
+        description: The employee's role.
+      - name: hired_date
+        description: Date the employee joined.
+      - name: terminated_date
+        description: Date the employee left, null if still employed.
+      - name: is_current_employee
+        description: Whether the employee is still with the company.
+
+  - name: stg_jaffleverse__promotions
+    description: >
+      Discount codes and their validity windows. One row per promotion.
+      Disabled when jaffleverse_using_promotions is set to false.
+    columns:
+      - name: promotion_id
+        description: Primary key. Unique identifier of the promotion.
+      - name: promotion_code
+        description: The code a customer enters at checkout.
+      - name: promotion_description
+        description: What the promotion offers.
+      - name: discount_type
+        description: Either percentage or fixed.
+      - name: discount_value
+        description: Percentage points or a currency amount, depending on discount_type.
+      - name: starts_date
+        description: First date the promotion is valid.
+      - name: ends_date
+        description: Last date the promotion is valid.
+
+  - name: stg_jaffleverse__orders
+    description: Order headers. One row per order.
+    columns:
+      - name: order_id
+        description: Primary key. Unique identifier of the order.
+      - name: customer_id
+        description: Foreign key to stg_jaffleverse__customers.
+      - name: employee_id
+        description: Foreign key to stg_jaffleverse__employees.
+      - name: promotion_id
+        description: Foreign key to stg_jaffleverse__promotions, null if no code was used.
+      - name: ordered_at
+        description: Timestamp the order was placed.
+      - name: ordered_date
+        description: Date the order was placed.
+      - name: order_status
+        description: One of completed, shipped, pending, cancelled or returned.
+      - name: order_channel
+        description: How the order reached us.
+      - name: shipping_country_code
+        description: ISO-2 country code the order shipped to.
+      - name: is_fulfilled_order
+        description: Whether the order reached the customer.
+
+  - name: stg_jaffleverse__order_items
+    description: Order line items. One row per product per order.
+    columns:
+      - name: order_item_id
+        description: Primary key. Unique identifier of the line item.
+      - name: order_id
+        description: Foreign key to stg_jaffleverse__orders.
+      - name: product_id
+        description: Foreign key to stg_jaffleverse__products.
+      - name: quantity
+        description: Units of the product on this line.
+      - name: unit_price
+        description: Price charged per unit on this line.
+      - name: discount_amount
+        description: Currency amount discounted from this line.
+      - name: line_item_amount
+        description: Net value of the line after discount.
+
+  - name: stg_jaffleverse__payments
+    description: Payments taken against orders. One row per payment.
+    columns:
+      - name: payment_id
+        description: Primary key. Unique identifier of the payment.
+      - name: order_id
+        description: Foreign key to stg_jaffleverse__orders.
+      - name: payment_method
+        description: How the customer paid.
+      - name: payment_amount
+        description: Currency amount of the payment.
+      - name: paid_at
+        description: Timestamp the payment settled.
+      - name: payment_status
+        description: Either succeeded or refunded.
+      - name: is_refunded_payment
+        description: Whether the payment was refunded.
+
+  - name: stg_jaffleverse__reviews
+    description: >
+      Customer product reviews. One row per review.
+      Disabled when jaffleverse_using_reviews is set to false.
+    columns:
+      - name: review_id
+        description: Primary key. Unique identifier of the review.
+      - name: product_id
+        description: Foreign key to stg_jaffleverse__products.
+      - name: customer_id
+        description: Foreign key to stg_jaffleverse__customers.
+      - name: order_id
+        description: Foreign key to stg_jaffleverse__orders.
+      - name: rating
+        description: Star rating from 1 to 5.
+      - name: review_text
+        description: Free text the customer wrote.
+      - name: submitted_at
+        description: Timestamp the review was submitted.

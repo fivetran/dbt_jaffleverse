@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: New to dbt packages?
+    url: https://docs.getdbt.com/docs/build/packages
+    about: What a dbt package is, how to install one, and why you would want to.
+  - name: How to build your own package
+    url: https://docs.getdbt.com/guides/building-packages
+    about: The dbt Labs guide to writing and publishing a package of your own.
+  - name: Browse the dbt Package Hub
+    url: https://hub.getdbt.com/
+    about: See what the community has already built. Yours could be next.
+  - name: Hang out in dbt Slack
+    url: https://www.getdbt.com/community/
+    about: Questions, ideas, or just want to chat with fellow data folks? Join us in #package-ecosystem.

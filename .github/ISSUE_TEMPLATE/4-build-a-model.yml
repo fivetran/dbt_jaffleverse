@@ -1,0 +1,51 @@
+name: "🏗️ Route 4: Build a Model"
+description: "Add a new model to the package. The full loop. About 15 minutes."
+title: "[model] "
+labels: ["route: models", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You are adding a model to `models/marts/`.
+
+        All eleven source tables already have a staging model, so nothing is blocked on
+        groundwork. Only three marts exist: copy whichever is closest.
+
+        `ref()` staging or intermediate models, never sources. Document every column in
+        `models/marts/jaffleverse.yml` and put `unique` and `not_null` on the primary key.
+
+        Gaps worth filling: divisions, employees, suppliers, daily sales, promotion
+        effectiveness, review sentiment, customer cohorts.
+
+  - type: input
+    id: name
+    attributes:
+      label: What will it be called?
+      placeholder: "jaffleverse__divisions"
+    validations:
+      required: true
+
+  - type: input
+    id: grain
+    attributes:
+      label: "Finish this sentence: one row per..."
+      description: If you cannot finish it, the model is not ready yet.
+      placeholder: "one row per division"
+    validations:
+      required: true
+
+  - type: textarea
+    id: question
+    attributes:
+      label: What question does it answer?
+      placeholder: "Which division actually makes money once you count cost of goods, and how many people work there?"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before you open the PR
+      options:
+        - label: It builds, or I am happy for a maintainer to run it
+        - label: Every column is documented and the primary key has passing tests

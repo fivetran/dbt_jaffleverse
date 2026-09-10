@@ -1,0 +1,16 @@
+category_id,division_id,category_name,is_active
+101,1,Sedative Flora,true
+102,1,Opinionated Succulents,true
+103,1,Hydroponic Anxiety,true
+201,2,Judgemental Textiles,true
+202,2,Confrontational Furniture,true
+203,2,Passive-Aggressive Bedding,true
+301,3,Retroactive Periodicals,true
+302,3,Speculative Stationery,true
+303,3,Chronologically Ambiguous,true
+401,4,Contradictory Beverages,true
+402,4,Structurally Unsound Drinkware,true
+403,4,Ambient Hydration,true
+501,5,Impractical Tools,true
+502,5,Silent Alarms,true
+503,5,Recursive Devices,true

@@ -1,0 +1,48 @@
+name: "🌱 Route 1: Stock the Shelves"
+description: "Invent a product, a customer, or a whole order. About 2 minutes, no SQL."
+title: "[seeds] "
+labels: ["route: seeds", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You are adding raw data to `integration_tests/seeds/*.csv`. No SQL needed.
+
+        **Three rules:** use an ID between 9000 and 9999, append to the end of the file, keep the
+        trailing newline. People are public domain fictional characters, and there are no email,
+        phone or address columns.
+
+        Columns and recipes: [`integration_tests/seeds/README.md`](../blob/main/integration_tests/seeds/README.md)
+
+  - type: dropdown
+    id: what
+    attributes:
+      label: What are you adding?
+      options:
+        - A product
+        - A customer
+        - An order (header, line items and a payment)
+        - A supplier
+        - A review
+        - A promotion
+        - An employee
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: idea
+    attributes:
+      label: Tell us about it
+      placeholder: "A Left-Handed Mouse Mat. Only works if you approach it from the correct side."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before you open the PR
+      options:
+        - label: IDs are between 9000 and 9999, appended at the end, trailing newline intact
+        - label: Every foreign key I used exists
+        - label: Any person I added is fictional, and I added no personal data

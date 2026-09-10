@@ -1,0 +1,16 @@
+promotion_id,promotion_code,description,discount_type,discount_value,starts_at,ends_at
+301,TOASTIE10,"10% off, for old times' sake",percentage,10.0,2025-01-01,2025-12-31
+302,BRICK4U,Flat 5 off Emotional Support Bricks,fixed,5.0,2025-02-14,2025-03-14
+303,QUIETPLANT,15% off anything that makes no noise,percentage,15.0,2025-03-01,2025-09-30
+304,TEMPORAL,"20% off yesterday, today only",percentage,20.0,2025-04-01,2025-04-02
+305,NANSSHED,Free shipping from Nan's Shed,fixed,8.0,2025-05-01,2026-05-01
+306,RECURSIVE,Discount applies to itself,percentage,5.0,2025-06-01,2026-06-01
+307,DRYWATER,"2 off Dry Water, wet or dry",fixed,2.0,2025-07-01,2025-08-31
+308,SIGHNOMORE,25% off Opinionated Succulents,percentage,25.0,2025-09-01,2025-10-31
+309,WEDNESDAY,Sunday prices on Wednesdays,percentage,12.5,2025-10-01,2026-03-31
+310,BEIGE,Clearing the beige sheets,fixed,15.0,2025-11-01,2026-01-31
+311,WHISPER,Quietly 30% off,percentage,30.0,2026-01-01,2026-06-30
+312,INFINITE,Bottomless discount (capped),fixed,7.5,2026-02-01,2026-12-31
+313,LEFTHAND,10% off Impractical Tools,percentage,10.0,2026-03-01,2026-09-30
+314,AMBIENT,"Ambient savings, room temperature",fixed,4.0,2026-04-01,2026-10-31
+315,PROVISIONAL,Discount subject to revision,percentage,18.0,2026-05-01,2026-11-30

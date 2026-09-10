@@ -1,0 +1,22 @@
+name: 'jaffleverse'
+version: '0.1.0'
+
+config-version: 2
+
+require-dbt-version: [">=1.10.0", "<3.0.0"]
+
+models:
+  jaffleverse:
+    +materialized: table
+    +schema: jaffleverse
+    staging:
+      +materialized: view
+      +schema: stg_jaffleverse
+    intermediate:
+      +materialized: ephemeral
+    marts:
+      +materialized: table
+
+vars:
+  jaffleverse_using_reviews: true
+  jaffleverse_using_promotions: true

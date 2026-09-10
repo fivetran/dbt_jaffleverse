@@ -1,0 +1,40 @@
+name: "🔧 Route 3: Automate It"
+description: "Write a macro: reusable SQL every consumer of the package gets. About 10 minutes."
+title: "[macro] "
+labels: ["route: macros", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        You are adding reusable SQL to `macros/`.
+
+        There is exactly one macro today, `macros/jaffleverse_segment_rank.sql`. Copy its shape.
+
+        Two things make a macro good here: it uses dbt cross database helpers rather than
+        warehouse specific SQL, and something actually calls it. A macro nothing uses is dead code.
+
+        Ideas: `safe_divide()`, `margin_pct()`, `order_status_group()`, `lead_time_bucket()`.
+
+  - type: input
+    id: name
+    attributes:
+      label: What will it be called?
+      placeholder: "jaffleverse_margin_pct"
+    validations:
+      required: true
+
+  - type: textarea
+    id: does
+    attributes:
+      label: What does it do, and what arguments does it take?
+      placeholder: "Takes revenue and cost, returns margin as a percentage. Null rather than an error when revenue is zero. Called from jaffleverse__products."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before you open the PR
+      options:
+        - label: It compiles, or I am happy for a maintainer to check
+        - label: Something in the package calls it

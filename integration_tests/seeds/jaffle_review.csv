@@ -1,0 +1,90 @@
+review_id,product_id,customer_id,order_id,rating,review_text,submitted_at
+30001,1050,2041,7002,4,"Solid product, mild existential side effects.",2025-10-14 16:22:00
+30002,1002,2057,7006,2,The alarm whispered. I slept through the whisper.,2025-06-19 08:52:00
+30003,1036,2032,7007,4,"Four stars, docked one for the eye contact.",2025-03-26 18:42:00
+30004,1038,2067,7012,5,"Finally, a newspaper with no surprises left in it.",2026-02-20 16:25:00
+30005,1007,2007,7015,4,"Arrived early, which given the product is worrying.",2025-12-02 15:08:00
+30006,1050,2017,7017,1,Silent whistle emits nothing. Support says working as intended. It is not.,2025-03-29 19:57:00
+30007,1003,2022,7019,5,Five stars and my sincere respect for the commitment to the bit.,2026-06-17 13:07:00
+30008,1010,2010,7021,5,I have never felt so gently but firmly assessed.,2025-02-28 07:43:00
+30009,1029,2054,7027,2,"Sieve retained the water and, somehow, my keys.",2026-07-10 12:49:00
+30010,1011,2067,7030,2,Steeped for six hours. Still dry.,2026-08-29 07:09:00
+30011,1013,2057,7031,4,"Sturdy. Judgemental, but sturdy.",2026-07-19 21:59:00
+30012,1017,2017,7032,4,Nearly perfect. The recursion is a bit much after midnight.,2025-08-25 16:29:00
+30013,1030,2019,7037,5,My houseplant has never been quieter. Neither have I.,2026-03-04 17:45:00
+30014,1038,2057,7041,4,"Good, though it did sigh at me twice.",2025-08-16 07:57:00
+30015,1038,2026,7043,5,Arrived in a box. The box was also the product. Delighted.,2025-12-15 14:55:00
+30016,1004,2049,7055,4,"Would recommend, with caveats I cannot articulate.",2026-04-05 13:32:00
+30017,1055,2010,7058,5,The chair and I have reached an understanding.,2026-01-01 12:05:00
+30018,1005,2071,7062,5,"Exactly as described, which is the alarming part.",2026-02-07 12:01:00
+30019,1034,2033,7064,5,"Works flawlessly, insofar as that word applies.",2026-07-11 08:01:00
+30020,1036,2021,7068,2,Handle was indeed optional and indeed absent.,2025-10-11 20:47:00
+30021,1054,2014,7069,4,"My flatmate is unsettled by it, which I count as a feature.",2025-09-22 07:58:00
+30022,1053,2058,7070,4,Does what it says. Says very little.,2026-01-20 12:36:00
+30023,1057,2051,7072,5,Ten stars. Would be judged again.,2026-04-30 08:25:00
+30024,1010,2001,7073,4,"Solid product, mild existential side effects.",2026-09-09 17:00:00
+30025,1024,2052,7076,4,"Four stars, docked one for the eye contact.",2026-01-19 10:30:00
+30026,1046,2057,7077,5,It arrived. It knew things. Perfect.,2026-07-31 11:59:00
+30027,1052,2077,7084,5,Genuinely the best thing this company makes and I include the bricks.,2026-02-18 10:20:00
+30028,1022,2060,7085,4,"Arrived early, which given the product is worrying.",2026-07-16 07:12:00
+30029,1047,2034,7087,5,"Bought one. Bought six more. No regrets, only bricks.",2025-04-19 14:58:00
+30030,1010,2002,7089,5,"Finally, a newspaper with no surprises left in it.",2025-02-19 21:35:00
+30031,1006,2017,7091,5,Five stars and my sincere respect for the commitment to the bit.,2026-08-23 15:52:00
+30032,1024,2041,7094,3,Ambiguous. Possibly deliberate.,2025-11-07 17:05:00
+30033,1049,2001,7098,4,"Sturdy. Judgemental, but sturdy.",2025-11-18 10:10:00
+30034,1056,2012,7099,5,I have never felt so gently but firmly assessed.,2026-05-17 07:37:00
+30035,1035,2046,7101,4,Nearly perfect. The recursion is a bit much after midnight.,2026-09-05 20:48:00
+30036,1013,2034,7106,3,It's fine. It's a brick. I knew it was a brick.,2026-08-15 18:52:00
+30037,1047,2060,7110,5,My houseplant has never been quieter. Neither have I.,2025-02-01 12:56:00
+30038,1039,2045,7111,4,"Good, though it did sigh at me twice.",2025-12-02 13:53:00
+30039,1010,2036,7112,3,Does approximately one of the three advertised things.,2026-07-03 07:14:00
+30040,1046,2007,7114,2,It maintains eye contact during meals. I was not warned.,2026-05-30 07:55:00
+30041,1005,2003,7116,5,Arrived in a box. The box was also the product. Delighted.,2025-08-11 12:32:00
+30042,1025,2062,7118,5,The chair and I have reached an understanding.,2026-04-30 09:44:00
+30043,1035,2071,7124,4,"Would recommend, with caveats I cannot articulate.",2025-10-25 17:09:00
+30044,1028,2015,7127,3,Neither good nor bad. Very on brand.,2025-05-19 13:18:00
+30045,1044,2075,7131,4,"My flatmate is unsettled by it, which I count as a feature.",2026-02-01 17:27:00
+30046,1002,2017,7139,4,Does what it says. Says very little.,2025-08-17 17:31:00
+30047,1013,2072,7144,4,"Solid product, mild existential side effects.",2026-07-31 07:42:00
+30048,1012,2010,7156,5,"Exactly as described, which is the alarming part.",2025-01-27 07:14:00
+30049,1004,2006,7166,4,"Four stars, docked one for the eye contact.",2025-11-20 20:23:00
+30050,1024,2068,7169,5,"Works flawlessly, insofar as that word applies.",2026-04-19 20:55:00
+30051,1034,2020,7171,4,"Arrived early, which given the product is worrying.",2025-12-02 14:07:00
+30052,1020,2013,7179,1,Tomorrow's newspaper was wrong about tomorrow. Twice.,2025-09-22 09:05:00
+30053,1014,2037,7182,5,Ten stars. Would be judged again.,2025-11-04 12:13:00
+30054,1002,2054,7189,5,It arrived. It knew things. Perfect.,2025-08-10 14:23:00
+30055,1018,2053,7191,5,Genuinely the best thing this company makes and I include the bricks.,2026-01-30 11:48:00
+30056,1044,2017,7202,2,The recursion did not terminate. Send help.,2025-06-23 18:50:00
+30057,1041,2053,7206,3,Adequate. The packaging apologised in advance.,2025-02-21 15:07:00
+30058,1039,2073,7217,5,"Bought one. Bought six more. No regrets, only bricks.",2026-06-10 12:44:00
+30059,1032,2027,7220,1,Wine glass was theoretical. The box was not. Very heavy box.,2025-03-21 09:54:00
+30060,1038,2012,7231,2,The alarm whispered. I slept through the whisper.,2026-07-27 17:08:00
+30061,1056,2036,7232,5,"Finally, a newspaper with no surprises left in it.",2025-12-20 17:12:00
+30062,1019,2063,7239,2,"Sieve retained the water and, somehow, my keys.",2025-06-03 09:26:00
+30063,1027,2062,7240,1,The teapot melted. I have been told this is expected.,2025-11-19 20:35:00
+30064,1033,2055,7241,4,"Sturdy. Judgemental, but sturdy.",2025-12-21 20:20:00
+30065,1035,2059,7245,1,The mirror bundle has been going for three weeks. Please advise.,2026-04-02 07:11:00
+30066,1044,2001,7246,3,"Middling, but I respect the commitment.",2026-02-12 13:45:00
+30067,1045,2079,7252,4,Nearly perfect. The recursion is a bit much after midnight.,2026-05-24 10:19:00
+30068,1043,2003,7256,1,Ordered in March. Supplier lead time was 400 days. Ask me again in 2027.,2025-06-07 20:55:00
+30069,1032,2001,7265,2,Steeped for six hours. Still dry.,2026-07-12 13:03:00
+30070,1060,2041,7267,2,Handle was indeed optional and indeed absent.,2025-07-19 13:35:00
+30071,1008,2019,7268,4,"Good, though it did sigh at me twice.",2025-01-19 17:34:00
+30072,1040,2033,7269,5,Five stars and my sincere respect for the commitment to the bit.,2025-07-05 16:18:00
+30073,1005,2020,7275,4,"Would recommend, with caveats I cannot articulate.",2025-10-22 13:47:00
+30074,1054,2002,7278,4,"My flatmate is unsettled by it, which I count as a feature.",2025-05-20 21:34:00
+30075,1011,2022,7285,4,Does what it says. Says very little.,2026-04-14 21:11:00
+30076,1044,2024,7287,1,Silent whistle emits nothing. Support says working as intended. It is not.,2026-01-14 14:55:00
+30077,1056,2023,7292,1,Tomorrow's newspaper was wrong about tomorrow. Twice.,2025-08-08 20:42:00
+30078,1055,2055,7299,4,"Solid product, mild existential side effects.",2025-08-02 14:24:00
+30079,1010,2058,7306,5,I have never felt so gently but firmly assessed.,2026-08-24 07:59:00
+30080,1038,2031,7321,5,My houseplant has never been quieter. Neither have I.,2025-08-25 19:07:00
+30081,1022,2039,7329,5,Arrived in a box. The box was also the product. Delighted.,2025-12-12 10:59:00
+30082,1022,2034,7330,2,It maintains eye contact during meals. I was not warned.,2026-06-24 13:54:00
+30083,1002,2041,7334,5,The chair and I have reached an understanding.,2025-09-23 14:26:00
+30084,1012,2017,7335,5,"Exactly as described, which is the alarming part.",2025-11-15 20:51:00
+30085,1030,2013,7340,2,The recursion did not terminate. Send help.,2026-04-14 21:38:00
+30086,1034,2000,7341,4,"Four stars, docked one for the eye contact.",2025-03-05 10:25:00
+30087,1012,2050,7345,4,"Arrived early, which given the product is worrying.",2025-10-15 07:37:00
+30088,1038,2015,7346,5,"Works flawlessly, insofar as that word applies.",2026-01-05 12:40:00
+30089,1021,2029,7348,3,I am not upset. I am not delighted. I am room temperature.,2025-01-23 18:44:00

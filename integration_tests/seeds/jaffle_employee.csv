@@ -1,0 +1,26 @@
+employee_id,division_id,first_name,last_name,role,hired_at,terminated_at,manager_employee_id
+500,3,Ebenezer,Scrooge,Principal Sceptic,2023-08-22,,
+501,1,Phileas,Fogg,Director of Almost,2023-03-28,,
+502,4,Sherlock,Holmes,Chief Jaffle Officer,2019-05-24,,
+503,1,Emma,Woodhouse,Head of Difficult Conversations,2023-02-02,,501
+504,4,Jay,Gatsby,VP of Unintended Consequences,2024-04-28,,502
+505,3,Dorian,Gray,Head of Ambient Vibes,2022-10-14,,500
+506,2,Victor,Frankenstein,Director of Plausible Deniability,2024-08-11,,501
+507,1,John,Silver,Supply Chain Apologist,2020-04-14,,500
+508,4,Elizabeth,Bennet,Senior Account Executive,2020-03-28,,502
+509,5,Jean,Valjean,Warehouse Philosopher,2019-05-15,2026-08-24,501
+510,2,Hester,Prynne,Regional Manager (Unspecified Region),2024-11-28,,502
+511,5,Ichabod,Crane,"Analyst, Vague Metrics",2024-11-27,,502
+512,5,Bob,Cratchit,Customer Delight Engineer,2023-03-19,,501
+513,3,Anne,Shirley,Account Executive,2021-02-09,,502
+514,2,Allan,Quatermain,Junior Account Executive,2020-02-06,,500
+515,5,Josephine,March,Chief Jaffle Officer,2023-05-16,,500
+516,5,Uriah,Heep,Director of Almost,2022-01-07,,500
+517,4,Wilkins,Micawber,Principal Sceptic,2020-09-23,2026-08-24,501
+518,4,Betsey,Trotwood,Head of Difficult Conversations,2019-03-17,,500
+519,3,Abraham,Van Helsing,VP of Unintended Consequences,2024-05-11,,502
+520,5,Mina,Harker,Head of Ambient Vibes,2021-10-28,,501
+521,2,Edmond,Dantes,Director of Plausible Deniability,2019-12-25,,502
+522,4,Sancho,Panza,Supply Chain Apologist,2020-08-29,,501
+523,4,Pollyanna,Whittier,Senior Account Executive,2022-11-08,,502
+524,1,Marilla,Cuthbert,Warehouse Philosopher,2020-10-23,,500

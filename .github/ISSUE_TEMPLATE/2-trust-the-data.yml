@@ -1,0 +1,42 @@
+name: "🧪 Route 2: Trust the Data"
+description: "Write a data test that locks in a rule. About 5 minutes."
+title: "[test] "
+labels: ["route: tests", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        The seed data is internally consistent, so a well written test should pass.
+
+        Ten of the eleven staging models have no tests at all. As people add seed data through
+        these routes, nothing stops an inconsistent row slipping in. Your test catches it.
+
+        Generic tests go in a model `.yml`, singular tests go in `integration_tests/tests/` and
+        pass when they return no rows. Worked examples of both are already in the repo.
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of test?
+      options:
+        - Generic test in a .yml file
+        - Singular test (a .sql file that returns bad rows)
+        - Not sure yet
+    validations:
+      required: true
+
+  - type: textarea
+    id: rule
+    attributes:
+      label: What rule should the data always follow?
+      placeholder: "No product should appear on an order placed after its discontinued_date."
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Before you open the PR
+      options:
+        - label: I ran the build and saw my test execute, or I am happy for a maintainer to run it
+        - label: If it failed, I said so in the PR rather than weakening it to force a pass

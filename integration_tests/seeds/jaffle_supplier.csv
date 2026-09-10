@@ -1,0 +1,11 @@
+supplier_id,supplier_name,country,lead_time_days,reliability_score,is_preferred
+1,Perpetual Backorder Ltd,GB,400,0.12,false
+2,Definitely Real Logistics,US,7,0.94,true
+3,The Warehouse That Time Forgot,IS,88,0.55,false
+4,Nan's Shed (Wholesale),AU,3,0.99,true
+5,Schrodinger Supply Co,DE,14,0.5,false
+6,Immediate Gratification Inc,US,1,0.88,true
+7,Glacial Freight Partners,CA,210,0.31,false
+8,Aunt Mildred's Industrial,GB,21,0.77,true
+9,Vague Imports,SG,45,0.66,false
+10,Overnight Eventually,NL,30,0.72,true
